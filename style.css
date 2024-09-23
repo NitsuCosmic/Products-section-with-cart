@@ -106,6 +106,10 @@ main {
 	padding: 1.5rem;
 	border-radius: 1rem;
 	height: fit-content;
+	position: sticky;
+	height: fit-content;
+	top: 1rem;
+	right: 0;
 }
 
 .cart__quantity {
@@ -196,9 +200,24 @@ main {
 	background-color: hsl(14, 87%, 33%);
 }
 
+.cart__empty-container {
+	padding: 0.75rem;
+	text-align: center;
+
+	p {
+		font-weight: 500;
+		color: var(--color-rose-500);
+	}
+}
+
 .attribution {
 	padding: 1rem;
 	text-align: center;
+}
+
+.attribution a {
+	font-weight: 500;
+	color: hsl(236, 73%, 58%);
 }
 
 @media screen and (width > 768px) {
