@@ -100,7 +100,7 @@ export const products = [
 	},
 ];
 
-export function getProductPrice(productName) {
+export function getProduct(productName) {
 	let matchingProduct;
 
 	products.forEach((product) => {
@@ -109,5 +109,5 @@ export function getProductPrice(productName) {
 		}
 	});
 
-	return matchingProduct.price;
+	return matchingProduct;
 }

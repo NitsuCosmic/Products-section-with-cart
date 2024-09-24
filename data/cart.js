@@ -1,4 +1,4 @@
-import { getProductPrice } from "./products.js";
+import { getProduct } from "./products.js";
 
 export let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -14,10 +14,10 @@ export function addProduct(productName) {
 	if (matchingItem) {
 		matchingItem.quantity += 1;
 	} else {
+		const newProduct = getProduct(productName);
 		cart.push({
-			name: productName,
+			...newProduct,
 			quantity: 1,
-			price: getProductPrice(productName),
 		});
 	}
 
@@ -50,6 +50,11 @@ export function getTotalPrice() {
 		totalPrice += getProductTotalPrice(cartItem.price, cartItem.quantity);
 	});
 	return totalPrice;
+}
+
+export function resetCart() {
+	cart = [];
+	saveToStorage();
 }
 
 function saveToStorage() {
